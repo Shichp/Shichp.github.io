@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>成绩更新与 Excel 预览 · 空天杯</title>
+    <link rel="stylesheet" href="assets/site.css">
+    <link rel="icon" href="assets/wican-lab-mark.png" type="image/png">
+</head>
+<body data-mode="preview">
+    <nav>
+        <a class="nav-brand" href="index.html"><img src="assets/wican-lab-mark.png" alt="实验室标志"><span><strong>空天杯</strong><small>成绩更新</small></span></a>
+        <a class="nav-action" href="index.html">返回查询页</a>
+    </nav>
+    <main>
+        <div class="tool-header">
+            <h1>成绩更新与 Excel 预览</h1>
+            <p>先检查成绩，再由负责人上传 GitHub 发布。选择文件只在当前浏览器中预览，不会修改线上成绩。</p>
+        </div>
+        <div class="tool-container">
+            <section class="tool-panel">
+                <h2>1. 准备 Excel</h2>
+                <div class="tool-links">
+                    <a class="upload-btn secondary" href="data/results.xlsx" download="results.xlsx">下载当前成绩表</a>
+                    <a class="upload-btn secondary" href="templates/填写示例.xlsx" download>下载填写示例</a>
+                </div>
+                <p class="query-note">第一次使用时，当前成绩表为空模板。填写示例中的人名和比分均为演示，请勿直接作为正式成绩发布。</p>
+                <ul>
+                    <li>保留「对阵成绩」「团体积分」「个人积分」三个工作表，第一行列名保持不变。不发布的数据表只保留标题行。</li>
+                    <li>未赛：比分A、比分B、胜者都留空。已赛：填写双方比分，胜者填 A 或 B；弃权填「弃权」。</li>
+                    <li>人数、积分填写非负数字，没有则填 0。团体及个人积分由负责人核定后填写，网站仅计算合计与排序。</li>
+                    <li>请使用 .xlsx；若使用公式计算积分，发布前将数据复制并「粘贴为值」。</li>
+                </ul>
+            </section>
+            <section class="tool-panel">
+                <h2>2. 校验并预览</h2>
+                <label class="file-label" for="preview-file">选择准备发布的成绩表（.xlsx，最多 5 MB）</label>
+                <input id="preview-file" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                <div id="preview-status" class="preview-message" role="status" aria-live="polite">请选择 Excel 文件。文件仅在本机读取。</div>
+                <div id="preview-warnings" class="preview-message warning" hidden></div>
+                <p class="query-note">请同时核对三张表。每次发布会用整份 Excel 替换上一个版本，空表将清除对应列表，不会自动合并历史记录。</p>
+            </section>
+            <section id="preview-results" class="tool-panel preview-panel" hidden>
+                <h2>本地预览 · 尚未发布</h2>
+                <p class="query-note">手机上可左右滑动表格，核对完整比分和积分。</p>
+                <div class="action-bar">
+                    <label for="match-project">选择项目：</label>
+                    <select id="match-project" onchange="renderMatches()"><option value="all">全部项目</option></select>
+                    <label for="search-input">关键词：</label>
+                    <input id="search-input" type="text" placeholder="姓名、队伍或轮次" oninput="renderMatches()">
+                </div>
+                <div class="table-container"><table><thead><tr><th scope="col">项目</th><th scope="col">轮次</th><th scope="col">选手/组合 A</th><th scope="col">比分</th><th scope="col">选手/组合 B</th><th scope="col">胜者/状态</th></tr></thead><tbody id="match-table-body"></tbody></table></div>
+                <h3>团体积分预览</h3>
+                <div class="table-container tool-table"><table><thead><tr><th scope="col">排名</th><th scope="col">战队名称</th><th scope="col">有效到场人数</th><th scope="col">到场积分</th><th scope="col">成绩积分</th><th scope="col">总分</th></tr></thead><tbody id="team-points-body"></tbody></table></div>
+                <h3>个人积分预览</h3>
+                <div class="table-container tool-table"><table><thead><tr><th scope="col">排名</th><th scope="col">姓名</th><th scope="col">所属战队</th><th scope="col">单项积分</th><th scope="col">破纪录加分</th><th scope="col">总积分</th></tr></thead><tbody id="individual-points-body"></tbody></table></div>
+                <p class="query-note">总积分相同则并列展示，正式名次以组委会确认结果为准。</p>
+                <button id="download-checked" class="upload-btn" type="button">下载待上传文件 results.xlsx</button>
+                <p class="query-note">浏览器若自动添加了“(1)”等后缀，上传前请改回 results.xlsx。下载文件与刚才预览的 Excel 内容一致。</p>
+            </section>
+            <section class="tool-panel">
+                <h2>3. 上传 GitHub 发布</h2>
+                <ol>
+                    <li>校验通过并核对预览后，下载上方待上传文件，文件名保持 <code>results.xlsx</code>。</li>
+                    <li>登录 GitHub，进入运动会网站仓库的 <code>data</code> 文件夹。</li>
+                    <li>点击 <strong>Add file → Upload files</strong>，上传 <code>results.xlsx</code>，替换同名文件。</li>
+                    <li>填写本次更新说明，点击 <strong>Commit changes</strong> 提交到发布分支。如果提交到其他分支，需要合并后才发布。</li>
+                    <li>在仓库 <strong>Actions</strong> 中等待 Pages 发布成功，再回到网站点击“刷新成绩”，核对正式结果。</li>
+                </ol>
+                <p class="query-note">更新可能需要约 10 分钟。这个预览页对所有人可见，但只有拥有仓库写入权限的负责人才能发布。无需在网页输入 GitHub 密码或令牌。</p>
+                <details><summary>允许填写的项目名称</summary><p id="project-help" class="site-notice"></p></details>
+            </section>
+        </div>
+    </main>
+    <footer><p>2026年第一届空天杯实验室运动会组织委员会</p><a class="footer-link" href="index.html">返回赛事查询</a></footer>
+    <noscript>请启用 JavaScript，以校验和预览 Excel。</noscript>
+    <script src="assets/vendor/xlsx.full.min.js" defer></script>
+    <script src="assets/results-core.js" defer></script>
+    <script src="assets/public.js" defer></script>
+    <script src="assets/manage.js" defer></script>
+</body>
+</html>

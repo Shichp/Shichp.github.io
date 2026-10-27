@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "participants": [
+    {
+      "id": "64072358-59e6-4ca5-b909-99659bbe2996",
+      "sessionToken": "fd2002ff1c7528aaafd68a0e9fc0ab545ee3bd3790cd3e21",
+      "name": "AAA",
+      "grade": "研二",
+      "checkedInAt": "2026-10-27T07:52:11.125Z"
+    },
+    {
+      "id": "f5523f3c-2bde-497c-8dec-d4d52e299080",
+      "sessionToken": "cbc2d2e4cfcae8143c5f7fa3a226c417d410b584e1a75157",
+      "name": "12",
+      "grade": "博士",
+      "checkedInAt": "2026-10-27T09:04:10.390Z"
+    }
+  ],
+  "lottery": {
+    "mode": "ratio",
+    "ratio": 50,
+    "fixedCount": 1,
+    "started": true,
+    "winners": [
+      "64072358-59e6-4ca5-b909-99659bbe2996"
+    ],
+    "drawnAt": "2026-10-27T09:08:18.558Z",
+    "participantCount": 2
+  }
+}

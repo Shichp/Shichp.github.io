@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+/* Sports accents and readable type for the expanded V4 visual treatment. */
+@media screen {
+  body { font-size:16px; }
+  h1,h2,.brand>span { font-family:"Kongtian Display","Microsoft YaHei","PingFang SC",sans-serif; }
+  .hero h1,h2,.checkin-copy h2,.notices-section h2 { font-weight:400; }
+  .brand>span { font-weight:400; letter-spacing:.07em; }
+  .brand small { font-family:"Microsoft YaHei",Arial,sans-serif; font-size:10px; letter-spacing:.1em; }
+  .main-nav>a { font-size:14px; }
+  .nav-checkin { font-size:13px; }
+  .section { padding-block:72px; }
+  h2,.checkin-copy h2 { font-size:42px; line-height:1.32; letter-spacing:.025em; }
+  .notices-section h2 { font-size:40px; line-height:1.4; }
+  .section-description { font-size:16px; line-height:1.9; }
+  .section-kicker,.section-kicker>span,.section-note { font-size:13px; }
+  .section-kicker { letter-spacing:.12em; }
+  .hero-description { font-size:16px; }
+  .hero-location { font-size:13px; }
+  .eyebrow { font-size:13px; }
+  .edition { font-size:13px; }
+  .strip-label,.event-strip-item small,.strip-index { font-size:13px; }
+  .hero-actions .button { font-size:14px; }
+
+  #schedule {
+    position:relative;
+    background:radial-gradient(circle at 97% 7%,#e1f1ff 0 74px,transparent 75px),radial-gradient(circle at 0 69%,#fff1e3 0 88px,transparent 89px),#fff;
+  }
+  #schedule>.container { position:relative; }
+  #schedule:before {
+    content:"";
+    position:absolute;
+    pointer-events:none;
+    right:3%;
+    top:30px;
+    width:245px;
+    height:115px;
+    background:linear-gradient(130deg,transparent 49%,#69b8ef55 49% 54%,transparent 54% 60%,#f8b37988 60% 63%,transparent 63% 68%,#b6dff755 68% 74%,transparent 74%);
+  }
+  .schedule-top { flex-wrap:wrap; }
+  .tag,.schedule-week,.schedule-date small { font-size:13px; }
+  .schedule-week { letter-spacing:.07em; }
+  .schedule-sports h3 { font-size:26px; }
+  .schedule-card>p { font-size:15px; line-height:1.95; }
+  .schedule-meta { font-size:14px; }
+  .text-link { font-size:15px; }
+  .section-footnote { font-size:14px; line-height:1.9; }
+  .schedule-card {
+    box-shadow:0 13px 32px #226ba710;
+    background:linear-gradient(125deg,#eef8ff,#e1f1ff);
+  }
+  .schedule-card-alt { background:linear-gradient(125deg,#fff8ef,#ffecd8); }
+  .schedule-card:after {
+    content:"";
+    position:absolute;
+    right:-54px;
+    top:42%;
+    width:210px;
+    height:210px;
+    border:2px solid #1264c91a;
+    border-radius:50%;
+    pointer-events:none;
+    transform:rotate(-24deg);
+    background:linear-gradient(transparent 49.5%,#1264c91a 49.5% 50.5%,transparent 50.5%),linear-gradient(90deg,transparent 49.5%,#1264c91a 49.5% 50.5%,transparent 50.5%),radial-gradient(ellipse at 0 50%,transparent 61%,#1264c91a 61.5% 62.3%,transparent 63%),radial-gradient(ellipse at 100% 50%,transparent 61%,#1264c91a 61.5% 62.3%,transparent 63%);
+  }
+  .schedule-card-alt:after { border-color:#e17c3624; background:linear-gradient(transparent 49.5%,#e17c3624 49.5% 50.5%,transparent 50.5%),linear-gradient(90deg,transparent 49.5%,#e17c3624 49.5% 50.5%,transparent 50.5%),radial-gradient(ellipse at 0 50%,transparent 61%,#e17c3624 61.5% 62.3%,transparent 63%),radial-gradient(ellipse at 100% 50%,transparent 61%,#e17c3624 61.5% 62.3%,transparent 63%); }
+  .schedule-card>* { position:relative; z-index:1; }
+
+  .checkin-section {
+    background:radial-gradient(circle at 3% 86%,#ffead3 0 78px,transparent 79px),linear-gradient(148deg,transparent 83%,#d7edff88 83% 88%,transparent 88% 92%,#c9e8ff88 92% 95%,transparent 95%),linear-gradient(120deg,#eff8ff,#f8fcff 62%,#fff8ef);
+  }
+  .checkin-steps strong { font-size:17px; }
+  .checkin-steps p { font-size:15px; line-height:1.9; }
+  .checkin-steps>li>span { font-size:13px; }
+  .second-checkin p { font-size:14px; line-height:1.8; }
+  .second-checkin strong { font-size:15px; }
+  .ticket-top { font-size:13px; }
+  .qr-ticket h3 { font-size:26px; }
+  .ticket-date,.qr-tip { font-size:14px; }
+  .qr-actions>button,.qr-actions>a { font-size:14px; }
+  .qr-ticket { box-shadow:0 18px 42px #3173a71c; }
+
+  #rules {
+    background:radial-gradient(ellipse at 100% 12%,#e8f5ff 0,transparent 35%),radial-gradient(ellipse at 0 100%,#fff0df 0,transparent 31%),#fff;
+  }
+  .rule-card {
+    background:linear-gradient(135deg,transparent 75%,#e6f4ff88 75% 80%,transparent 80% 86%,#ffead580 86% 89%,transparent 89%),linear-gradient(120deg,#fff,#fafdff);
+    box-shadow:0 12px 30px #2970a40c;
+  }
+  .rule-card:nth-child(2) { background:linear-gradient(135deg,transparent 75%,#fff0dfb3 75% 80%,transparent 80% 86%,#dcefff80 86% 89%,transparent 89%),linear-gradient(120deg,#fff,#fffdfa); }
+  .rule-number { font-size:13px; letter-spacing:.07em; }
+  .rule-sport { width:60px; height:60px; }
+  .rule-card h3 { font-size:28px; }
+  .rule-card>p { font-size:15px; }
+  .rule-metrics>span { font-size:14px; }
+  .rule-metrics b { font-size:15px; }
+  .rule-metrics strong { font-size:36px; }
+  .rule-card .button { font-size:15px; }
+  .rules-notice p { font-size:15px; line-height:1.9; }
+
+  .publications-section {
+    background:radial-gradient(circle at 99% 7%,#ffead3 0 82px,transparent 83px),linear-gradient(155deg,transparent 82%,#d4ebff88 82% 86%,transparent 86% 91%,#e0f1ff 91% 95%,transparent 95%),#f0f8ff;
+  }
+  .publication-card { box-shadow:0 14px 34px #226ba70c; }
+  .status-badge { font-size:13px; }
+  .publication-tab { font-size:16px; }
+  .publication-tab>span { font-size:14px; }
+  .filter-field { font-size:14px; }
+  .filter-field select,.search-field input { font-size:16px; height:44px; }
+  .search-field { width:315px; }
+  .publication-status { font-size:13px; line-height:1.8; }
+  .publication-empty {
+    background:radial-gradient(ellipse at 0 93%,#e8f5ff 0,transparent 25%),radial-gradient(ellipse at 100% 8%,#fff2e5 0,transparent 24%);
+  }
+  .publication-empty h3 { font-size:25px; }
+  .publication-empty p { font-size:16px; }
+  .empty-caption { font-size:14px; }
+  .publication-footer { font-size:13px; line-height:1.8; }
+  .publication-table { font-size:15px; }
+  .publication-table th { font-size:14px; }
+  .publication-table td small,.cell-badge { font-size:13px; }
+  .noscript-note { font-size:15px; }
+
+  .notices-section {
+    background:linear-gradient(155deg,#fff 73%,#e8f5ff88 73% 77%,transparent 77%),radial-gradient(ellipse at 0 100%,#fff4e6 0,transparent 35%),#fff;
+  }
+  .notices-grid>div:first-child { position:relative; }
+  .notices-grid>div:first-child:after {
+    content:"";
+    display:block;
+    position:relative;
+    left:26px;
+    margin-top:30px;
+    width:164px;
+    height:164px;
+    pointer-events:none;
+    border:3px solid #f3b17566;
+    border-radius:50%;
+    transform:rotate(-25deg);
+    background:linear-gradient(transparent 49%,#f3b17566 49% 51%,transparent 51%),linear-gradient(90deg,transparent 49%,#f3b17566 49% 51%,transparent 51%),radial-gradient(ellipse at 0 50%,transparent 59%,#f3b17566 59.5% 61%,transparent 61.5%),radial-gradient(ellipse at 100% 50%,transparent 59%,#f3b17566 59.5% 61%,transparent 61.5%),#fff2e3;
+  }
+  .notice-list article { gap:20px; }
+  .notice-list article>div { min-width:0; }
+  .notice-category { font-size:13px; }
+  .notice-list h3 { font-size:17px; line-height:1.7; }
+  .notice-list p { font-size:15px; line-height:1.95; }
+  .footer-inner>p { font-size:14px; }
+  .footer-inner>p>span,.footer-bottom,.back-top { font-size:13px; }
+  .footer-brand small { font-size:11px; }
+  .qr-dialog h2 { font-size:27px; }
+  .dialog-kicker { font-size:13px; }
+  .qr-dialog>p:not(.dialog-kicker) { font-size:14px; }
+  .qr-dialog .dialog-tip { font-size:13px !important; }
+
+  @media (min-width:1051px) {
+    .main-nav { font-size:14px; }
+    .nav-checkin { font-size:13px; }
+    .hero-description { font-size:16px; }
+    .hero-location { font-size:13px; }
+    .strip-label,.event-strip-item small,.strip-index { font-size:13px; }
+    .event-strip-item strong { font-size:23px; }
+  }
+  @media (max-width:1050px) {
+    .hero-description { font-size:15px; }
+    h2,.checkin-copy h2 { font-size:36px; }
+    .notices-section h2 { font-size:35px; }
+    .notices-grid>div:first-child:after { display:none; }
+    .search-field { width:265px; }
+    .rule-metrics strong { display:block; margin-right:0; }
+    .schedule-sports h3 { font-size:24px; }
+    .rule-card h3 { font-size:25px; }
+  }
+  @media (max-width:650px) {
+    body { font-size:15px; }
+    .main-nav>a { font-size:14px; }
+    .nav-checkin { font-size:13px; }
+    .hero-actions .button { font-size:13px; }
+    .hero-date-chip>span { font-size:13px; white-space:normal; line-height:1.6; }
+    .section { padding-block:50px; }
+    h2,.checkin-copy h2,.notices-section h2 { font-size:31px; line-height:1.4; letter-spacing:0; }
+    .section-description { font-size:15px; }
+    .section-kicker,.section-kicker>span { font-size:13px; }
+    .brand small { font-size:9px; }
+    #schedule:before { width:132px; height:84px; right:0; top:23px; opacity:.65; }
+    .tag,.schedule-week,.schedule-date small { font-size:13px; }
+    .schedule-card>p,.checkin-steps p,.rule-card>p,.notice-list p { font-size:15px; }
+    .schedule-sports h3 { font-size:24px; }
+    .schedule-meta,.text-link,.section-footnote { font-size:14px; }
+    .schedule-meta { gap:12px; }
+    .checkin-steps strong { font-size:16px; }
+    .second-checkin p,.second-checkin strong { font-size:14px; }
+    .ticket-top { font-size:13px; }
+    .qr-ticket h3 { font-size:24px; }
+    .ticket-date,.qr-tip,.qr-actions>button,.qr-actions>a { font-size:13px; }
+    .rule-number { font-size:13px; }
+    .rule-sport { width:50px; height:50px; }
+    .rule-card h3 { font-size:25px; }
+    .rule-metrics strong { display:block; margin-right:0; font-size:36px; }
+    .rule-metrics>span { font-size:13px; }
+    .rule-metrics>span+span { padding-left:12px; }
+    .rule-metrics b { font-size:14px; }
+    .rule-card .button { font-size:14px; }
+    .rules-notice p { font-size:15px; }
+    .publication-tab { font-size:14px; }
+    .publication-tab>span { font-size:13px; }
+    .filter-field { font-size:14px; }
+    .filter-field select,.search-field input { font-size:16px; height:46px; }
+    .search-field { width:100%; }
+    .publication-empty h3 { font-size:24px; }
+    .publication-empty p { font-size:15px; }
+    .empty-caption { font-size:13px; }
+    .publication-footer { font-size:13px; }
+    .publication-table { font-size:15px; }
+    .notice-list article { gap:12px; }
+    .notice-list h3 { font-size:16px; }
+    .notice-list p { font-size:15px; }
+    .footer-inner>p { font-size:14px; }
+    .footer-inner>p>span,.footer-bottom,.back-top { font-size:13px; }
+  }
+  @media (max-width:360px) {
+    .hero-date-chip>span { font-size:13px; }
+    h2,.checkin-copy h2,.notices-section h2 { font-size:29px; }
+    .schedule-sports h3,.rule-card h3 { font-size:23px; }
+    .schedule-meta { gap:10px; font-size:13px; }
+    .rule-metrics b { font-size:13px; }
+    .back-top { gap:7px; }
+  }
+}
